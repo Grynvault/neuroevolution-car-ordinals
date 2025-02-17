@@ -1,0 +1,399 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="web-icon.png"
+			sizes="32x32" />
+		<style>
+			html,
+			body {
+				height: 100%;
+				background-color: rgb(20, 20, 20);
+			}
+			.canvasClass {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				border: 1px solid white;
+			}
+			.settings-container {
+				width: 100%;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 80px;
+			}
+			.input-container {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 5px;
+				margin-bottom: 20px;
+				margin-top: 8px;
+			}
+
+			.number-input {
+				width: 60px;
+				text-align: center;
+				font-size: 16px;
+				padding: 4px;
+				border: 2px solid #007bff;
+				border-radius: 8px;
+				outline: none;
+				transition: all 0.3s ease;
+			}
+
+			.number-input:focus {
+				border-color: white;
+			}
+
+			.btn {
+				background-color: white;
+				color: black;
+				border: none;
+				padding: 2px 14px;
+				font-size: 18px;
+				border-radius: 6px;
+				cursor: pointer;
+				transition: background 0.3s ease;
+			}
+
+			.btn:hover {
+				background-color: #0056b3;
+			}
+
+			.label-style {
+				color: white;
+				font-size: 18px;
+				font-family: Pixelated;
+			}
+		</style>
+		<!-- Tensorflow JS inscribed on Ordinals -->
+		<script
+			language="javascript"
+			type="text/javascript"
+			src="https://ordinals.com/content/b20f5cb914e8f94dd393c9fa074fbb168eaa464ff24205493c022959f256e3c8i0"></script>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Neuroevolution Car</title>
+	</head>
+	<body>
+		<h1 style="color: white; text-align: center; padding-top: 10px">Neuroevolution Car Simulation</h1>
+		<div class="settings-container">
+			<div>
+				<label
+					for="totalInput"
+					class="label-style"
+					>Population Size:</label
+				>
+				<div class="input-container">
+					<button
+						class="btn"
+						onclick="decreaseTotal()">
+						-
+					</button>
+					<input
+						type="number"
+						id="totalInput"
+						class="number-input"
+						value="10"
+						min="1"
+						max="100" />
+					<button
+						class="btn"
+						onclick="increaseTotal()">
+						+
+					</button>
+				</div>
+			</div>
+			<div>
+				<label
+					for="mutationRate"
+					class="label-style"
+					>Mutation Rate:</label
+				>
+				<div class="input-container">
+					<button
+						class="btn"
+						onclick="decreaseMutation()">
+						-
+					</button>
+					<input
+						type="number"
+						id="mutationRate"
+						class="number-input"
+						step="0.01"
+						value="0.09"
+						min="0.01"
+						max="1" />
+					<button
+						class="btn"
+						onclick="increaseMutation()">
+						+
+					</button>
+				</div>
+			</div>
+		</div>
+		<div id="sketch-id"></div>
+		<!--- P5.js inscribed on Ordinals -->
+		<script
+			language="javascript"
+			type="text/javascript"
+			src="https://ordinals.com/content/7e37766541506810ba6399c4b2735121f508bd9209df43dd200bf2316b014594i0"></script>
+		<!--- Ordinal Props -->
+		<script>
+			//Ordinals Constant
+			let TOTAL = 10;
+			let MUTATION_RATE = 0.09;
+			const LIFESPAN = 400;
+
+			let pathWidth = 30;
+
+			function preload() {
+				car2 = loadImage('/assets/car_0.png');
+				light = loadImage('/assets/light.png');
+				location2 = loadImage('/assets/endpoint.png');
+				//Pixelated Font Type inscribed on Ordinals
+				fontType = loadFont('https://ordinals.com/content/74d8b14b61735bb0d738108ea9a9530406ffcbdd4b65a4206e0cfbc1ac1500e7i0');
+			}
+
+			class Particle {
+				constructor(brain) {
+					this.fitness = 0;
+					this.prefit = [];
+					this.dead = false;
+					this.finished = false;
+					this.pos = createVector(start.x, start.y);
+					this.vel = createVector();
+					this.acc = createVector();
+					this.maxspeed = 1.4;
+					this.maxforce = 0.1;
+					this.sight = 40;
+					this.rays = [];
+					this.counter = 0; //to count lifespan
+					this.index = 0; //higher index means passed more checkpoints
+					this.score = 0;
+					this.newfit = 0;
+					this.newfitness = 0;
+
+					for (let a = -90; a < 90; a += 45) {
+						this.rays.push(new Ray(this.pos, radians(a)));
+					}
+
+					if (brain) {
+						this.brain = brain.copy();
+					} else {
+						this.brain = new NeuralNetwork(this.rays.length + 2, 50, 1);
+
+						//When inscribed, use this code to load child inscription brain
+
+						/**
+						 * 
+						let inscription_id = window.location.pathname.split('/').pop();
+
+						fetch(`/r/children/${inscription_id}`)
+							.then((res) => res.json())
+							.then((data) => {
+								console.log('children ->', data);
+								let recentBrainId = data.ids.length > 0 ? data.ids[data.ids.length - 1] : null;
+								console.log('recentBrainId ->', recentBrainId);
+
+								if (recentBrainId) {
+									this.brain
+										.loadPretrainedWeights(`/content/${recentBrainId}`)
+										.then(() => console.log('Weights loaded, ready to use the model'))
+										.catch((err) => console.error('Error loading weights:', err));
+								}
+							})
+							.catch((error) => console.error('Error fetching recentBrainId:', error));
+
+						**/
+					}
+
+					//select mutationRate
+					if (highscore > 200000) {
+						this.mutationRate = 0.01;
+					} else if (highscore < 20 && gen > 25 && highscore2 < 200000) {
+						this.mutationRate = MUTATION_RATE + 0.03;
+					} else if (highscore < 20 && gen > 55 && highscore2 < 200000) {
+						this.mutationRate = MUTATION_RATE + 0.05;
+					} else {
+						this.mutationRate = MUTATION_RATE;
+					}
+				}
+
+				mutate() {
+					this.brain.mutate(this.mutationRate);
+				}
+
+				dispose() {
+					this.brain.dispose();
+				}
+
+				check(checkpoints) {
+					if (!this.finished) {
+						this.goal = checkpoints[this.index];
+						const d = pldistance(this.goal.a, this.goal.b, this.pos.x, this.pos.y);
+
+						if (d < 400) {
+							let newfitness = map(d, 0, 400, 1, 0);
+							if (newfitness > this.newfit) {
+								this.newfit = newfitness;
+							}
+							this.prefit[this.index] = this.newfit;
+						}
+
+						if (d < 5) {
+							this.index++;
+							this.count = 0;
+							this.counter = 0;
+
+							if (this.index + 5 == checkpoints.length) {
+								this.finished = true;
+								score++;
+							}
+						}
+					}
+				}
+
+				calculateFitness(target) {
+					let sum = 0;
+					this.fitness = pow(2, this.index);
+
+					for (let i = 0; i < this.prefit.length; i++) {
+						sum += this.prefit[i];
+					}
+
+					this.newfitness = pow(1.8, sum);
+				}
+
+				look(walls) {
+					const inputs = [];
+
+					//check every rays
+					for (let i = 0; i < this.rays.length; i++) {
+						const ray = this.rays[i];
+						let closest = null;
+						let record = this.sight;
+
+						//for every rays, check the distance with the walls
+						for (let wall of walls) {
+							const pt = ray.cast(wall);
+							if (pt) {
+								const d = p5.Vector.dist(this.pos, pt);
+								if (d < record && d < this.sight) {
+									record = d;
+									closest = pt;
+								}
+							}
+						}
+
+						if (record < 8) {
+							this.dead = true;
+						}
+
+						//map 0 -> 0 , and 50 -> 1 (ratio = 50:1)
+						inputs[i] = map(record, 0, this.sight, 1, 0);
+
+						if (closest && rayOn) {
+							stroke('red');
+							strokeWeight(0.9);
+							line(this.pos.x, this.pos.y, closest.x, closest.y);
+						}
+					}
+
+					//inputs velocity as well
+					const vel = this.vel.copy();
+					vel.normalize();
+					inputs.push(vel.x);
+					inputs.push(vel.y);
+
+					//NN GIVES OUTPUT
+					const output = this.brain.predict(inputs);
+
+					//MAP THE OUTPUT WITH ANGLE
+					let angle = map(output[0], 0, 1, -PI, PI);
+					angle += this.vel.heading(); //this.vel.heading() = angle where the car is heading (p5js)
+
+					//USE THE DATA TO ALLOW CAR TO
+					const steering = p5.Vector.fromAngle(angle); //fromAngle() = make a new 2D vector from an angle
+					steering.setMag(this.maxspeed); //create a new vector that has a magnitude of maxspeed
+					steering.sub(this.vel);
+					steering.limit(this.maxforce); //create a new vector with limit of maxforce for magnitude
+					this.applyForce(steering); //
+				}
+
+				bounds() {
+					//for screen border
+					if (this.pos.x > width || this.pos.x < 0 || this.pos.y > height || this.pos.y < 0) {
+						this.dead = true;
+					}
+				}
+
+				applyForce(force) {
+					this.acc.add(force);
+				}
+
+				update() {
+					//making the rays move
+					if (!this.dead && !this.finished) {
+						this.pos.add(this.vel);
+						this.vel.add(this.acc);
+						this.vel.limit(this.maxspeed);
+						this.acc.set(0, 0);
+						this.counter++;
+						if (this.counter > LIFESPAN) {
+							this.dead = true;
+						}
+
+						for (let i = 0; i < this.rays.length; i++) {
+							this.rays[i].rotate(this.vel.heading());
+						}
+					}
+				}
+
+				show() {
+					push();
+					translate(this.pos.x, this.pos.y);
+					const heading = this.vel.heading();
+					rotate(heading);
+					fill(255);
+					rectMode(CENTER);
+					rect(0, 0, 17, 6);
+					image(car2, -12, -6, 23, 12);
+					pop();
+					if (this.goal) {
+						this.goal.showCheckpoint();
+					}
+				}
+			}
+		</script>
+		<!--- Sketch, InscriptionID: a13c1785324ffd1ed0562686e062f5a072ffe51e7783583fee4df2f050a5040fi0  -->
+		<script src="/modules/sketch.js"></script>
+		<!--- Building Walls, InscriptionID: 84b29337dd4a3fa40e709d94cd73835f3d066afc0a7fa16d3a274b0f1a73a811i4 -->
+		<script src="/modules/buildingwalls.js"></script>
+		<!--- Ray, InscriptionID: 84b29337dd4a3fa40e709d94cd73835f3d066afc0a7fa16d3a274b0f1a73a811i2 -->
+		<script src="/modules/ray.js"></script>
+		<!--- Neural Network, InscriptionID: 84b29337dd4a3fa40e709d94cd73835f3d066afc0a7fa16d3a274b0f1a73a811i1 -->
+		<script src="/modules/nn.js"></script>
+		<!--- Genetic Algorithm, InscriptionID: 84b29337dd4a3fa40e709d94cd73835f3d066afc0a7fa16d3a274b0f1a73a811i0 -->
+		<script src="/modules/ga.js"></script>
+		<!--- Race Track Algorithm, InscriptionID: 84b29337dd4a3fa40e709d94cd73835f3d066afc0a7fa16d3a274b0f1a73a811i3 -->
+		<script src="/modules/walls.js"></script>
+		<div style="display: flex; justify-content: center; align-items: center; padding-bottom: 20px; padding-top: 20px">
+			<a
+				href="https://x.com/Grynvault"
+				target="_blank"
+				style="width: 100%; color: white; text-align: center"
+				>x.com/Grynvault</a
+			>
+		</div>
+	</body>
+</html>
