@@ -41,6 +41,11 @@ The **Ordinal Neuroevolution Car Project** is an innovative experiment combining
 - The saved brain is inscribed as a **child ordinal** of the initial simulation.
 - Each new brain inscription **updates the parent simulation**, ensuring the latest and most improved model is inherited.
 
+📌 **View the Ordinals**: Explore the inscriptions of AI evolution.
+
+- 🚗 **Unlearned Car (Initial State)**: [View Inscription](https://www.ord.io/85562636)
+- 🏎️ **Learned Car (Evolved AI)**: [View Inscription](https://www.ord.io/85586094)
+
 ## Comparison with PizzaPets
 
 The **Ordinal Neuroevolution Car Project** draws inspiration from **PizzaPets**, a gamified system where users must continuously feed their pets to keep them alive, with value derived from the commitment to interacting with the system daily. In this project:
@@ -55,6 +60,9 @@ The **Ordinal Neuroevolution Car Project** draws inspiration from **PizzaPets**,
 - The user watches as the **AI-controlled race car** attempts to complete the track.
 - Over time, as new brains are inscribed, the **car should be able to navigate increasingly difficult tracks**.
 - The challenge lies in **training an AI model capable of learning and adapting** to various race track configurations.
+
+🏁 **Try the Simulation**: Experiment with the Neural Network and Genetic Algorithm by adjusting parameters and observing how the car evolves.  
+👉 [Run the AI Simulation](https://neuroevolution-car-simulation.netlify.app/)
 
 ## Expanding to Other Games and Simulations
 
