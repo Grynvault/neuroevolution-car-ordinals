@@ -24,7 +24,7 @@ The **Ordinal Neuroevolution Car Project** is an innovative experiment combining
 - The race track layout changes randomly every simulation.
 - The car dies (simulation resets) when it hits the wall.
 
-**![Level 1 vs Level 15 Racing Track](image-link-here)**
+**![Level 1 vs Level 15 Racing Track](https://ordinals.com/content/592c4fcb2232351260f6dd1996fb7ce8da5b356834a7deb95879e6137d501002i0)**
 
 ### AI Learning Process
 
