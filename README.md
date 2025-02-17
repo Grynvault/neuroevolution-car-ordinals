@@ -24,7 +24,8 @@ The **Ordinal Neuroevolution Car Project** is an innovative experiment combining
 - The race track layout changes randomly every simulation.
 - The car dies (simulation resets) when it hits the wall.
 
-**![Level 1 vs Level 15 Racing Track](https://ordinals.com/content/592c4fcb2232351260f6dd1996fb7ce8da5b356834a7deb95879e6137d501002i0)**
+**![Level 4 Racing Track](https://raw.githubusercontent.com/Grynvault/neuroevolution-car-ordinals/refs/heads/main/level-4.png)**
+**![Level 19 Racing Track](https://raw.githubusercontent.com/Grynvault/neuroevolution-car-ordinals/refs/heads/main/level-19.png)**
 
 ### AI Learning Process
 
@@ -39,8 +40,6 @@ The **Ordinal Neuroevolution Car Project** is an innovative experiment combining
 - When significant improvement is observed, the **brain (trained neural network) is saved by users**.
 - The saved brain is inscribed as a **child ordinal** of the initial simulation.
 - Each new brain inscription **updates the parent simulation**, ensuring the latest and most improved model is inherited.
-
-**![Untrained Car Ordinals vs Trained Car Ordinals](image-link-here)**
 
 ## Comparison with PizzaPets
 
