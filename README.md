@@ -69,7 +69,6 @@ The **Ordinal Neuroevolution Car Project** draws inspiration from **PizzaPets**,
 This approach can be **adapted to other AI-driven games**, such as:
 
 - Obstacle-based **mazes**.
-- **Autonomous drone navigation**.
 - **AI-powered NPC behavior** in complex game environments.
 - **Inscription-based AI progression** in different learning applications.
 
