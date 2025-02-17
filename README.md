@@ -33,8 +33,8 @@ The **neural network is built with TensorFlow** and has been inscribed on Ordina
 
 #### Neural Network & Genetic Algorithm
 
-- The car uses a **Neural Network** to determine direction and speed.
-- A **Genetic Algorithm** evolves better-performing networks over multiple simulations.
+- The car uses a **Neural Network** to determine steering direction.
+- A **Genetic Algorithm** evolves better-performing networks over multiple simulations, based on it's parent (previous simulation) genetic information (neural network).
 
 **![Car Neural Network Model](https://raw.githubusercontent.com/Grynvault/neuroevolution-car-ordinals/refs/heads/main/images/Car%20Neural%20Network.jpg)**
 
