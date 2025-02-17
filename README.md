@@ -8,6 +8,8 @@
 
 The **Ordinal Neuroevolution Car Project** is an innovative experiment combining **AI, Genetic Algorithm, Gamification, and Ordinals**. The goal is to create an evolving AI-controlled race car that improves its performance through **Neural Networks** and **Genetic Algorithms**, while leveraging **Ordinals** to inscribe the car’s brain and track its progress over multiple simulations.
 
+The **neural network is built with TensorFlow** and has been inscribed on Ordinals under ID **b20f5cb914e8f94dd393c9fa074fbb168eaa464ff24205493c022959f256e3c8i0**.
+
 ## Key Components:
 
 - **AI**: The agent (race car) learns and improves over simulations.
@@ -24,8 +26,8 @@ The **Ordinal Neuroevolution Car Project** is an innovative experiment combining
 - The race track layout changes randomly every simulation.
 - The car dies (simulation resets) when it hits the wall.
 
-**![Level 4 Racing Track](https://raw.githubusercontent.com/Grynvault/neuroevolution-car-ordinals/refs/heads/main/level-4.png)**
-**![Level 19 Racing Track](https://raw.githubusercontent.com/Grynvault/neuroevolution-car-ordinals/refs/heads/main/level-19.png)**
+**![Level 4 Racing Track](https://raw.githubusercontent.com/Grynvault/neuroevolution-car-ordinals/refs/heads/main/images/level-4.png)**
+**![Level 19 Racing Track](https://raw.githubusercontent.com/Grynvault/neuroevolution-car-ordinals/refs/heads/main/images/level-19.png)**
 
 ### AI Learning Process
 
