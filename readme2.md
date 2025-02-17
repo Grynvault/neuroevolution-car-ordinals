@@ -2,7 +2,7 @@
 
 # Ordinal Neuroevolution Car - Phase 1 Documentation
 
-## ![Ordinal Neuroevolution Car](https://ordinals.com/content/2bbfd14442458c71a144ff07d6076ae1db75d6535b1ac716baf23e967ce2b5c9i2)
+## ![Ordinal Neuroevolution Car](image-link-here)
 
 ## Introduction
 
@@ -24,8 +24,7 @@ The **Ordinal Neuroevolution Car Project** is an innovative experiment combining
 - The race track layout changes randomly every simulation.
 - The car dies (simulation resets) when it hits the wall.
 
-**![Level 4 Racing Track](https://raw.githubusercontent.com/Grynvault/neuroevolution-car-ordinals/refs/heads/main/level-4.png)**
-**![Level 19 Racing Track](https://raw.githubusercontent.com/Grynvault/neuroevolution-car-ordinals/refs/heads/main/level-19.png)**
+**![Level 1 vs Level 15 Racing Track](image-link-here)**
 
 ### AI Learning Process
 
@@ -41,10 +40,12 @@ The **Ordinal Neuroevolution Car Project** is an innovative experiment combining
 - The saved brain is inscribed as a **child ordinal** of the initial simulation.
 - Each new brain inscription **updates the parent simulation**, ensuring the latest and most improved model is inherited.
 
+**![Untrained Car Ordinals vs Trained Car Ordinals](image-link-here)**
+
 📌 **View the Ordinals**: Explore the inscriptions of AI evolution.
 
-- 🚗 **Unlearned Car (Initial State)**: [View Inscription](https://www.ord.io/85562636)
-- 🏎️ **Learned Car (Evolved AI)**: [View Inscription](https://www.ord.io/85586094)
+- 🚗 **Unlearned Car (Initial State)**: [View Inscription](https://unlearned-car-ordinal-link-here)
+- 🏎️ **Learned Car (Evolved AI)**: [View Inscription](https://learned-car-ordinal-link-here)
 
 ## Comparison with PizzaPets
 
@@ -62,13 +63,14 @@ The **Ordinal Neuroevolution Car Project** draws inspiration from **PizzaPets**,
 - The challenge lies in **training an AI model capable of learning and adapting** to various race track configurations.
 
 🏁 **Try the Simulation**: Experiment with the Neural Network and Genetic Algorithm by adjusting parameters and observing how the car evolves.  
-👉 [Run the AI Simulation](https://neuroevolution-car-simulation.netlify.app/)
+👉 [Run the AI Simulation](https://your-simulation-link-here)
 
 ## Expanding to Other Games and Simulations
 
 This approach can be **adapted to other AI-driven games**, such as:
 
 - Obstacle-based **mazes**.
+- **Autonomous drone navigation**.
 - **AI-powered NPC behavior** in complex game environments.
 - **Inscription-based AI progression** in different learning applications.
 
@@ -80,11 +82,9 @@ Looking ahead, Phase 2 will introduce more features and enhancements:
 - 🏎️ **Experiment with different track types**, including traditional racing tracks and maze-like obstacle courses.
 - 🏆 **Introduce racing competitions**, where users can race their trained car ordinals against others. Cars will be ranked based on performance, with higher-ranked cars demonstrating better AI evolution and increased ordinal value.
 
-💡 **Let us know what you think!** We invite feedback and ideas from the community to shape Phase 2. Your insights and suggestions will help drive the next stage of AI inscription evolution!
-
 ## Community Involvement
 
-We highly highly welcome **the Ordinals community** to get involved in shaping the future of AI inscription and gamified AI evolution! Whether by training models, contributing ideas, or sharing insights, **your participation can help drive innovation**.
+We welcome **the Ordinals community** to get involved in shaping the future of AI inscription and gamified AI evolution! Whether by training models, contributing ideas, or sharing insights, **your participation can help drive innovation**.
 
 ## Conclusion
 
