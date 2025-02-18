@@ -13,7 +13,7 @@ The **neural network is built with TensorFlow** and has been inscribed on Ordina
 ## Key Components:
 
 - **AI**: The agent (race car) learns and improves over simulations.
-- **Genetic Algorithm**: Multiple cars learn simultaneously, and the best-performing car's genetic information is passed on to the next generation.
+- **Genetic Algorithm**: Multiple cars learn simultaneously, and the best-performing car's genetic information is passed on to the next generation, accelerating the learning process.
 - **Gamification**: The simulation presents challenges requiring adaptation.
 - **Ordinals**: The trained neural network is inscribed as a child ordinal, ensuring continuity and progress.
 
