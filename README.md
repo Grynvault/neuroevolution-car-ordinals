@@ -2,7 +2,9 @@
 
 # Ordinal Neuroevolution Car - Phase 1 Documentation
 
-## ![Ordinal Neuroevolution Car](https://ordinals.com/content/2bbfd14442458c71a144ff07d6076ae1db75d6535b1ac716baf23e967ce2b5c9i2)
+## ![Ordinal Neuroevolution Car Image](https://raw.githubusercontent.com/Grynvault/neuroevolution-car-ordinals/refs/heads/main/images/neuroevolution-car.png)
+
+## ![Ordinal Neuroevolution Car](https://raw.githubusercontent.com/Grynvault/neuroevolution-car-ordinals/refs/heads/main/images/ordinal.gif)
 
 ## Introduction
 
