@@ -230,8 +230,10 @@ function decreaseTotal() {
 }
 
 document.getElementById('mutationRate').addEventListener('input', function () {
-	MUTATION_RATE = parseInt(this.value);
-	updatePopulation();
+	if (this.value > 1) this.value = 1;
+	else {
+		MUTATION_RATE = this.value;
+	}
 });
 
 function increaseMutation() {
