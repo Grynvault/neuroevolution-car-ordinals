@@ -8,7 +8,7 @@
 
 The **Ordinal Neuroevolution Car Project** is an innovative experiment combining **AI, Genetic Algorithm, Gamification, and Ordinals**. The goal is to create an evolving AI-controlled race car that improves its performance through **Neural Networks** and **Genetic Algorithms**, while leveraging **Ordinals** to inscribe the car’s brain and track its progress over multiple simulations.
 
-The **neural network is built with TensorFlow** and has been inscribed on Ordinals under ID **b20f5cb914e8f94dd393c9fa074fbb168eaa464ff24205493c022959f256e3c8i0**.
+The **neural network is built with TensorFlow** and has been inscribed on Ordinals inscription ID **b20f5cb914e8f94dd393c9fa074fbb168eaa464ff24205493c022959f256e3c8i0**.
 
 ## Key Components:
 
