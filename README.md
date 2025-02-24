@@ -44,13 +44,13 @@ The **neural network is built with TensorFlow** and has been inscribed on Ordina
 
 - The simulation runs multiple times, allowing the car to **gradually improve**.
 - When significant improvement is observed, the **brain (trained neural network) is saved by users**.
-- The saved brain is inscribed as a **child ordinal** of the initial simulation.
-- Each new brain inscription **updates the parent simulation**, ensuring the latest and most improved model is inherited.
+- The saved brain is inscribed as a **child inscription**.
+- Each new brain inscription **updates the parent (the Car Ordinal)**, ensuring the latest and most improved model is inherited.
 
 📌 **View the Ordinals**: Explore the inscriptions of AI evolution.
 
-- 🚗 **Unlearned Car (Initial State)**: [View Inscription](https://www.ord.io/85562636)
-- 🏎️ **Learned Car (Evolved AI)**: [View Inscription](https://www.ord.io/85586094)
+- 🚗 **Unlearned Car (Initial State)**: [View Inscription]([https://www.ord.io/85562636](https://ordinals.com/inscription/592c4fcb2232351260f6dd1996fb7ce8da5b356834a7deb95879e6137d501002i0))
+- 🏎️ **Learned Car (Evolved AI)**: [View Inscription]([https://www.ord.io/85586094](https://ordinals.com/inscription/5c754d52e343c5fd4e83ee533088c58f60f64d4b0814e5df3c4fe67d795db319i0))
 
 ## Comparison with PizzaPets
 
@@ -91,6 +91,8 @@ Looking ahead, Phase 2 will introduce more features and enhancements:
 ## Community Involvement
 
 We highly highly welcome **the Ordinals community** to get involved in shaping the future of AI inscription and gamified AI evolution! Whether by training models, contributing ideas, or sharing insights, **your participation can help drive innovation**.
+
+[Join our Discord Server to share feedbacks and ideas](https://discord.gg/8NBRbFckQV)
 
 ## Conclusion
 
